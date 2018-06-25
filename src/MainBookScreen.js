@@ -7,6 +7,7 @@ class MainBookScreen extends React.Component {
 		this.state = {
 			books: []
 		}
+
 	}
 	componentDidMount() {
 	  BooksAPI.getAll()
@@ -17,10 +18,12 @@ class MainBookScreen extends React.Component {
 		})
 	}
 	render(){
-		console.log(this.state.books);
-		const currentlyReadingList = this.state.books.filter(book => (book.shelf === "currentlyReading"));
-		const wantToReadList = this.state.books.filter(book => (book.shelf === "wantToRead"));
-		const readList = this.state.books.filter(book => (book.shelf === "read"));
+		const { books } = this.state;
+		const currentlyReadingList = books.filter(book => (book.shelf === "currentlyReading"));
+		const wantToReadList = books.filter(book => (book.shelf === "wantToRead"));
+		const readList = books.filter(book => (book.shelf === "read"));
+		console.log("MainBookScreen read", readList);
+		console.log("MainBookScreen this.prop", this.props);
 		return (
 			<div className="list-books">
 			  <div className="list-books-title">
