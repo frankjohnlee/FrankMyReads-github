@@ -2,12 +2,8 @@ import React from 'react'
 import BookShelf from './BookShelf'
 import * as BooksAPI from './BooksAPI'
 class MainBookScreen extends React.Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			books: []
-		}
-
+	state = {
+		books: []
 	}
 	componentDidMount() {
 	  BooksAPI.getAll()
@@ -22,8 +18,9 @@ class MainBookScreen extends React.Component {
 		const currentlyReadingList = books.filter(book => (book.shelf === "currentlyReading"));
 		const wantToReadList = books.filter(book => (book.shelf === "wantToRead"));
 		const readList = books.filter(book => (book.shelf === "read"));
-		console.log("MainBookScreen read", readList);
-		console.log("MainBookScreen this.prop", this.props);
+		console.log("MainBookScreen currentlyReadingList", currentlyReadingList);
+		console.log("MainBookScreen wantToReadList", wantToReadList);
+		console.log("MainBookScreen readList", readList);
 		return (
 			<div className="list-books">
 			  <div className="list-books-title">

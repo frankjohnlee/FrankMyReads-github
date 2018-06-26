@@ -1,11 +1,9 @@
 import React from 'react'
 import Book from './Book'
 class BookShelf extends React.Component {
-	constructor(props){
-		super(props)
-		console.log(this.props);
-	}
+
 	render(){
+		console.log("BookShelf", this.props);
 
 		return (
 			<div className="bookshelf">
