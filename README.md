@@ -6,8 +6,6 @@
 This web app is built for the Udacity React Nanodegree Program. The purpose of the project is to demonstrate my understanding of the basic structure and operation of a React-based app.
 ![Load Screen](src/demo/front-page.png "load screen")
 ## How to Load the App
-You can run a hosted version of the app at [http://lively-attention.surge.sh/](http://lively-attention.surge.sh)
-
 The project uses Node.js and the Create-React-App starter.  If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
 
 Once Node is installed, navigate to the directory where you want to store the app
