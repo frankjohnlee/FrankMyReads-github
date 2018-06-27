@@ -4,7 +4,7 @@
 ## Project Purpose:
 
 This web app is built for the Udacity React Nanodegree Program. The purpose of the project is to demonstrate my understanding of the basic structure and operation of a React-based app.
-
+![Load Screen](src/demo/front-page.png "load screen")
 ## How to Load the App
 You can run a hosted version of the app at [http://lively-attention.surge.sh/](http://lively-attention.surge.sh)
 
@@ -22,7 +22,7 @@ npm start
 
 A new browser window should automatically open displaying the app.  If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser
 
-![Load Screen](src/demo/front-page.png "load screen")
+
 ![Search Screen](src/demo/search-page.png "search screen")
 
 ## Interactive Demo
