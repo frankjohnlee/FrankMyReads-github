@@ -1,31 +1,67 @@
 import React from 'react'
-
+import * as BooksAPI from './BooksAPI'
+import BookShelf from './BookShelf'
+import { Link } from 'react-router-dom'
 class Search extends React.Component {
+	state = {
+		query: '',
+		booksFound: []
+	}
+
+	handleChange(event){
+		const newQuery = event.target.value.trim();
+		console.log("newQuery", newQuery);
+		if (newQuery){
+			this.setState({query: newQuery});
+
+			BooksAPI.search(newQuery, 20).then(
+				(books) => {
+					books.length > 0 ?
+					this.setState({booksFound: books}): this.setState({booksFound: []})
+				})
+			}
+			else {
+					this.setState({
+						booksFound: [],
+						query: ''
+					})
+				}
+		}
 	render(){
+		const { toggleSearch, handleChange, changeShelf } = this.props;
+		const { query, booksFound } = this.state;
 		return (
-			  <div className="search-books">
-				<div className="search-books-bar">
-				  <a className="close-search" onClick={
-						  () => this.setState({ showSearchPage: false })}>
-						  Close
-				  </a>
-				  <div className="search-books-input-wrapper">
-					{/*
-					  NOTES: The search from BooksAPI is limited to a particular set of search terms.
-					  You can find these search terms here:
-					  https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
+			<div>
+				<div className="search-books">
+					<div className="search-books-bar">
+						<Link className="close-search"  to="/">Close</Link>
+						<div className="search-books-input-wrapper">
+						<input
+							type="text"
+							placeholder="Search by title or author"
+							value = { query }
+							onChange = { (event) => this.handleChange(event) }/>
 
-					  However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
-					  you don't find a specific author or title. Every search is limited by search terms.
-					*/}
-					<input type="text" placeholder="Search by title or author"/>
+						</div>
+					</div>
+					<div className="search-books-results">
+						<BookShelf
+							bookShelfName = {""}
+							bookList = {booksFound}
+							key={query}
+							changeShelf = {changeShelf}
+							/>
+						{
+							booksFound.length === 0 && query !== "" && (
+								<div className=''>
+									<h3>No books were found.  Please try again!</h3>
+								</div>
 
-				  </div>
+							)
+						}
+					</div>
 				</div>
-				<div className="search-books-results">
-				  <ol className="books-grid"></ol>
-				</div>
-			  </div>
+			</div>
 		)
 	}
 }
