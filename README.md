@@ -25,7 +25,7 @@ A new browser window should automatically open displaying the app.  If it doesn'
 
 ![Search Screen](src/demo/search-page.png "search screen")
 
-## Interactive Demo
+## See the web app in action
 ![Interactive Demo](src/demo/myReadsDemo.gif "Interactive Demo")
 
 ### Resources and Documentation:
