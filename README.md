@@ -5,6 +5,8 @@
 
 This web app is built for the Udacity React Nanodegree Program. The purpose of the project is to demonstrate my understanding of the basic structure and operation of a React-based app.
 ![Load Screen](src/demo/front-page.png "load screen")
+## Check out the live version of the web app
+[Live Version of the Web App] (http://myreads-frank.surge.sh/)
 ## How to Load the App
 The project uses Node.js and the Create-React-App starter.  If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
 
