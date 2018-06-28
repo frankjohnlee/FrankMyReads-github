@@ -27,7 +27,8 @@ A new browser window should automatically open displaying the app.  If it doesn'
 
 ## See the web app in action
 ![Interactive Demo](src/demo/myReadsDemo.gif "Interactive Demo")
-
+## This app is also mobile friendly
+![Interactive Demo](src/demo/mobile-static.png "Mobile Photos")
 ### Resources and Documentation:
 * [Create-react-app Documentation](https://github.com/facebookincubator/create-react-app)
 * [React Router Documentation](http://knowbody.github.io/react-router-docs/)
