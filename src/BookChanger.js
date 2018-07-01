@@ -8,7 +8,7 @@ class BookCharger extends React.Component {
 	}
 	render(){
 		const bookObj = this.props.bookObj
-		let changeShelfTo = 'none';
+		let changeShelfTo = bookObj.shelf;
 		return (
 			<div className="book-shelf-changer">
 				<select

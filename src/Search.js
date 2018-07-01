@@ -9,8 +9,7 @@ class Search extends React.Component {
 	}
 
 	handleChange(event){
-		const newQuery = event.target.value.trim();
-		console.log("newQuery", newQuery);
+		const newQuery = event.target.value;
 		if (newQuery){
 			this.setState({query: newQuery});
 
